@@ -1,0 +1,18 @@
+---
+import { SEO_TITLE, SEO_DESC } from '~/constants/seo'
+---
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+    <meta name="description" content={SEO_DESC} />
+    <meta property="og:title" content={SEO_TITLE} />
+    <meta property="og:description" content={SEO_DESC} />
+    <title>{SEO_TITLE}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
