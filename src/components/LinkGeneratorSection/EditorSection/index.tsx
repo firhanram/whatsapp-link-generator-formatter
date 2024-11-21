@@ -14,6 +14,7 @@ import Blockquote from "@tiptap/extension-blockquote";
 import OrderedList from "@tiptap/extension-ordered-list";
 import ListItem from "@tiptap/extension-list-item";
 import Code from "@tiptap/extension-code";
+import { Monospace } from "@/plugins/tiptap/monospace";
 
 const EditorSection = () => {
   const editor = useEditor({
@@ -25,6 +26,7 @@ const EditorSection = () => {
       CustomBold,
       CustomStrike,
       CustomItalic,
+      Monospace,
       Blockquote,
       OrderedList,
       ListItem,
