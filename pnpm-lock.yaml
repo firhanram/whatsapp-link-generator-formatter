@@ -29,6 +29,9 @@ dependencies:
   '@radix-ui/react-tooltip':
     specifier: ^1.1.4
     version: 1.1.4(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.3.1)(react@18.3.1)
+  '@tiptap/extension-blockquote':
+    specifier: ^2.10.0
+    version: 2.10.0(@tiptap/core@2.10.0)
   '@tiptap/extension-bold':
     specifier: ^2.10.0
     version: 2.10.0(@tiptap/core@2.10.0)
@@ -1900,6 +1903,14 @@ packages:
       '@tiptap/pm': ^2.7.0
     dependencies:
       '@tiptap/pm': 2.10.0
+    dev: false
+
+  /@tiptap/extension-blockquote@2.10.0(@tiptap/core@2.10.0):
+    resolution: {integrity: sha512-6Xmfo2lpfIRcbfkLD/NGX4YgQqfgAbu6XaZQZf5oGtHLPTrz4D7Mw20GgNBHzae2XwUCwLMt6zXOkBgU/LnlZg==}
+    peerDependencies:
+      '@tiptap/core': ^2.7.0
+    dependencies:
+      '@tiptap/core': 2.10.0(@tiptap/pm@2.10.0)
     dev: false
 
   /@tiptap/extension-bold@2.10.0(@tiptap/core@2.10.0):

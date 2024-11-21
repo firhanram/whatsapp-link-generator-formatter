@@ -10,6 +10,7 @@ import { useEditor } from "@tiptap/react";
 import { CustomBold } from "@/plugins/tiptap/bold";
 import { CustomStrike } from "@/plugins/tiptap/strike";
 import { CustomItalic } from "@/plugins/tiptap/italic";
+import Blockquote from "@tiptap/extension-blockquote";
 
 const EditorSection = () => {
   const editor = useEditor({
@@ -20,6 +21,7 @@ const EditorSection = () => {
       CustomBold,
       CustomStrike,
       CustomItalic,
+      Blockquote,
       Placeholder.configure({
         placeholder: "Type a message...",
         showOnlyCurrent: true,
