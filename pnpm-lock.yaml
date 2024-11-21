@@ -41,6 +41,9 @@ dependencies:
   '@tiptap/extension-placeholder':
     specifier: ^2.10.0
     version: 2.10.0(@tiptap/core@2.10.0)(@tiptap/pm@2.10.0)
+  '@tiptap/extension-strike':
+    specifier: ^2.10.0
+    version: 2.10.0(@tiptap/core@2.10.0)
   '@tiptap/extension-text':
     specifier: ^2.10.0
     version: 2.10.0(@tiptap/core@2.10.0)
@@ -1950,6 +1953,14 @@ packages:
     dependencies:
       '@tiptap/core': 2.10.0(@tiptap/pm@2.10.0)
       '@tiptap/pm': 2.10.0
+    dev: false
+
+  /@tiptap/extension-strike@2.10.0(@tiptap/core@2.10.0):
+    resolution: {integrity: sha512-SxApLJMQkxnmPGR3lwaskvLK61yI+Bu9hGZGdwMZqNh6o3LoDOxDaXjHD5joeMYQiqQrBE9zg46506MsXtrU7Q==}
+    peerDependencies:
+      '@tiptap/core': ^2.7.0
+    dependencies:
+      '@tiptap/core': 2.10.0(@tiptap/pm@2.10.0)
     dev: false
 
   /@tiptap/extension-text@2.10.0(@tiptap/core@2.10.0):
