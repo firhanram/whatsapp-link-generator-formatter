@@ -36,6 +36,7 @@ export const Monospace = Mark.create({
     return [
       {
         tag: "code",
+        class: "font-mono",
       },
     ];
   },
