@@ -11,6 +11,8 @@ import { CustomBold } from "@/plugins/tiptap/bold";
 import { CustomStrike } from "@/plugins/tiptap/strike";
 import { CustomItalic } from "@/plugins/tiptap/italic";
 import Blockquote from "@tiptap/extension-blockquote";
+import OrderedList from "@tiptap/extension-ordered-list";
+import ListItem from "@tiptap/extension-list-item";
 
 const EditorSection = () => {
   const editor = useEditor({
@@ -22,6 +24,8 @@ const EditorSection = () => {
       CustomStrike,
       CustomItalic,
       Blockquote,
+      OrderedList,
+      ListItem,
       Placeholder.configure({
         placeholder: "Type a message...",
         showOnlyCurrent: true,

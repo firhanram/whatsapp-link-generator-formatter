@@ -41,6 +41,12 @@ dependencies:
   '@tiptap/extension-italic':
     specifier: ^2.10.0
     version: 2.10.0(@tiptap/core@2.10.0)
+  '@tiptap/extension-list-item':
+    specifier: ^2.10.0
+    version: 2.10.0(@tiptap/core@2.10.0)
+  '@tiptap/extension-ordered-list':
+    specifier: ^2.10.0
+    version: 2.10.0(@tiptap/core@2.10.0)
   '@tiptap/extension-paragraph':
     specifier: ^2.10.0
     version: 2.10.0(@tiptap/core@2.10.0)
@@ -1953,6 +1959,22 @@ packages:
 
   /@tiptap/extension-italic@2.10.0(@tiptap/core@2.10.0):
     resolution: {integrity: sha512-MqPYbHAEeO8QBvZRIkF4J2OTf/uiUPzUiXGLJ50w1ozfMBIw1txMvfR3g2cpwfvZlcOgYTgy7M0Oq00nQz5eXg==}
+    peerDependencies:
+      '@tiptap/core': ^2.7.0
+    dependencies:
+      '@tiptap/core': 2.10.0(@tiptap/pm@2.10.0)
+    dev: false
+
+  /@tiptap/extension-list-item@2.10.0(@tiptap/core@2.10.0):
+    resolution: {integrity: sha512-BxC6NNHd2xcC+mk5hpYWURUdj/mRz6TGFwH5CsyrUXPxApx0+V+EPHaAgdpu8dr+jtTEzjXF62V6e2JmOAPimg==}
+    peerDependencies:
+      '@tiptap/core': ^2.7.0
+    dependencies:
+      '@tiptap/core': 2.10.0(@tiptap/pm@2.10.0)
+    dev: false
+
+  /@tiptap/extension-ordered-list@2.10.0(@tiptap/core@2.10.0):
+    resolution: {integrity: sha512-jsK+mvzs7HmxQuQOU3HgIga+v7zUbQlmSP4/danusqUihJ+lc1n0frDCIkVvJrnSB3FChvNgT6ZEA14HOhdJzg==}
     peerDependencies:
       '@tiptap/core': ^2.7.0
     dependencies:

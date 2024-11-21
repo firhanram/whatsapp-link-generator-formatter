@@ -22,6 +22,8 @@
     "@tiptap/extension-bold": "^2.10.0",
     "@tiptap/extension-document": "^2.10.0",
     "@tiptap/extension-italic": "^2.10.0",
+    "@tiptap/extension-list-item": "^2.10.0",
+    "@tiptap/extension-ordered-list": "^2.10.0",
     "@tiptap/extension-paragraph": "^2.10.0",
     "@tiptap/extension-placeholder": "^2.10.0",
     "@tiptap/extension-strike": "^2.10.0",
