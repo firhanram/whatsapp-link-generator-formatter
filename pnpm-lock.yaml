@@ -35,6 +35,9 @@ dependencies:
   '@tiptap/extension-document':
     specifier: ^2.10.0
     version: 2.10.0(@tiptap/core@2.10.0)
+  '@tiptap/extension-italic':
+    specifier: ^2.10.0
+    version: 2.10.0(@tiptap/core@2.10.0)
   '@tiptap/extension-paragraph':
     specifier: ^2.10.0
     version: 2.10.0(@tiptap/core@2.10.0)
@@ -1935,6 +1938,14 @@ packages:
       '@tiptap/core': 2.10.0(@tiptap/pm@2.10.0)
       '@tiptap/pm': 2.10.0
       tippy.js: 6.3.7
+    dev: false
+
+  /@tiptap/extension-italic@2.10.0(@tiptap/core@2.10.0):
+    resolution: {integrity: sha512-MqPYbHAEeO8QBvZRIkF4J2OTf/uiUPzUiXGLJ50w1ozfMBIw1txMvfR3g2cpwfvZlcOgYTgy7M0Oq00nQz5eXg==}
+    peerDependencies:
+      '@tiptap/core': ^2.7.0
+    dependencies:
+      '@tiptap/core': 2.10.0(@tiptap/pm@2.10.0)
     dev: false
 
   /@tiptap/extension-paragraph@2.10.0(@tiptap/core@2.10.0):
