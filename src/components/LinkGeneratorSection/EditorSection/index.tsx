@@ -13,6 +13,7 @@ import { CustomItalic } from "@/plugins/tiptap/italic";
 import Blockquote from "@tiptap/extension-blockquote";
 import OrderedList from "@tiptap/extension-ordered-list";
 import ListItem from "@tiptap/extension-list-item";
+import Code from "@tiptap/extension-code";
 
 const EditorSection = () => {
   const editor = useEditor({
@@ -20,6 +21,7 @@ const EditorSection = () => {
       Document,
       Paragraph,
       Text,
+      Code,
       CustomBold,
       CustomStrike,
       CustomItalic,

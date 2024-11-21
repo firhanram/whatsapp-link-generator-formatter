@@ -20,6 +20,7 @@
     "@radix-ui/react-tooltip": "^1.1.4",
     "@tiptap/extension-blockquote": "^2.10.0",
     "@tiptap/extension-bold": "^2.10.0",
+    "@tiptap/extension-code": "^2.10.0",
     "@tiptap/extension-document": "^2.10.0",
     "@tiptap/extension-italic": "^2.10.0",
     "@tiptap/extension-list-item": "^2.10.0",
