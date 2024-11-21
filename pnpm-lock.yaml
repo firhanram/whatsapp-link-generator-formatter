@@ -29,6 +29,9 @@ dependencies:
   '@radix-ui/react-tooltip':
     specifier: ^1.1.4
     version: 1.1.4(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.3.1)(react@18.3.1)
+  '@tiptap/extension-bold':
+    specifier: ^2.10.0
+    version: 2.10.0(@tiptap/core@2.10.0)
   '@tiptap/extension-document':
     specifier: ^2.10.0
     version: 2.10.0(@tiptap/core@2.10.0)
@@ -1891,6 +1894,14 @@ packages:
       '@tiptap/pm': ^2.7.0
     dependencies:
       '@tiptap/pm': 2.10.0
+    dev: false
+
+  /@tiptap/extension-bold@2.10.0(@tiptap/core@2.10.0):
+    resolution: {integrity: sha512-1wL8UI1Aii0u2cbDEvwyqsZb2pgBt8HLJdsIax/ELoF2tKCD5821nElqTGLBBg4pUGPa0ru9ZemuL8GdXZp3Qg==}
+    peerDependencies:
+      '@tiptap/core': ^2.7.0
+    dependencies:
+      '@tiptap/core': 2.10.0(@tiptap/pm@2.10.0)
     dev: false
 
   /@tiptap/extension-bubble-menu@2.10.0(@tiptap/core@2.10.0)(@tiptap/pm@2.10.0):

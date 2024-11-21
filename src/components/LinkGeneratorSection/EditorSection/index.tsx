@@ -7,6 +7,7 @@ import Paragraph from "@tiptap/extension-paragraph";
 import Text from "@tiptap/extension-text";
 import Placeholder from "@tiptap/extension-placeholder";
 import { useEditor } from "@tiptap/react";
+import { CustomBold } from "@/plugins/tiptap/bold";
 
 const EditorSection = () => {
   const editor = useEditor({
@@ -14,6 +15,7 @@ const EditorSection = () => {
       Document,
       Paragraph,
       Text,
+      CustomBold,
       Placeholder.configure({
         placeholder: "Type a message...",
         showOnlyCurrent: true,
