@@ -1,0 +1,16 @@
+.buble_chat_editor {
+  :global {
+    .tiptap {
+      outline: none;
+      position: relative;
+
+      & > p.is-editor-empty:first-child::before {
+        color: theme("colors.muted.foreground");
+        content: attr(data-placeholder);
+        pointer-events: none;
+        position: absolute;
+        inset: 0;
+      }
+    }
+  }
+}
