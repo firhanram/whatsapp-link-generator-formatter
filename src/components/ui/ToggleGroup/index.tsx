@@ -72,7 +72,7 @@ const ToggleGroupItemTooltip = React.forwardRef<
   return (
     <TooltipProvider delayDuration={200} skipDelayDuration={150}>
       <Tooltip>
-        <TooltipTrigger>
+        <TooltipTrigger asChild>
           <ToggleGroupPrimitive.Item
             ref={ref}
             className={cn(
