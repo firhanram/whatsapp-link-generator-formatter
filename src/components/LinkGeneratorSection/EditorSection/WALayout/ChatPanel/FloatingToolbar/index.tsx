@@ -45,13 +45,13 @@ const TOOLBAR_ITEMS = [
     icon: <CodeIcon />,
   },
   {
-    name: "Bulleted List",
-    value: "bulletedList",
+    name: "Bulleted list",
+    value: "bulletList",
     icon: <ListIcon />,
   },
   {
     name: "Numbered List",
-    value: "numberedList",
+    value: "orderedList",
     icon: <ListOrderedIcon />,
   },
 ];
