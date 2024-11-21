@@ -21,15 +21,15 @@ const EditorSection = () => {
     ],
   });
 
-  if (!editor) {
-    return null;
-  }
-
   return (
     <WALayout>
-      <HeaderPanel />
-      <ChatPanel editor={editor} />
-      <FooterPanel />
+      {editor && (
+        <>
+          <HeaderPanel />
+          <ChatPanel editor={editor} />
+          <FooterPanel />
+        </>
+      )}
     </WALayout>
   );
 };
