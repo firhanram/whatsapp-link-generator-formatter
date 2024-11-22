@@ -16,6 +16,7 @@ import ListItem from "@tiptap/extension-list-item";
 import BulletList from "@tiptap/extension-bullet-list";
 import Code from "@tiptap/extension-code";
 import { Monospace } from "@/plugins/tiptap/monospace";
+import GeneratedLinkDialog from "./GeneratedLinkDialog";
 
 const EditorSection = () => {
   const editor = useEditor({
@@ -48,6 +49,7 @@ const EditorSection = () => {
           <FooterPanel editor={editor} />
         </>
       )}
+      <GeneratedLinkDialog />
     </WALayout>
   );
 };

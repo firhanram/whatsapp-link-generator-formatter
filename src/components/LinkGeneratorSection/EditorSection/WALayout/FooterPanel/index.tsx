@@ -4,9 +4,13 @@ import { Input } from "@/components/ui/Input";
 import { useState } from "react";
 import { MARKS, WHATSAPP_LINK } from "@/constants/common";
 import { type Editor, type JSONContent } from "@tiptap/react";
+import { useGeneratedLinkDialogStore, useWhatsAppPayloadStore } from "@/store";
 
 const FooterPanel = ({ editor }: { editor: Editor }) => {
   const [phoneNumber, setPhoneNumber] = useState("");
+
+  const { toggle } = useGeneratedLinkDialogStore();
+  const { setFormattedMessage } = useWhatsAppPayloadStore();
 
   const toWhatsappText = ({ content }: JSONContent) => {
     let text = "";
@@ -59,7 +63,11 @@ const FooterPanel = ({ editor }: { editor: Editor }) => {
             toWhatsappText(editor.getJSON())
           );
 
-          console.log(`${WHATSAPP_LINK}${phoneNumber}?text=${encodedText}`);
+          setFormattedMessage(
+            `${WHATSAPP_LINK}${phoneNumber}?text=${encodedText}`
+          );
+
+          toggle();
         }}
         className="flex justify-between gap-4"
       >
