@@ -79,7 +79,7 @@ function FloatingToolbar({ editor }: { editor: Editor }) {
   return (
     <ToggleGroup
       type="multiple"
-      className="mb-10 bg-white rounded-md inline-flex"
+      className="mb-10 bg-white rounded-md gap-1 inline-flex p-1"
       value={selectedValue}
       onValueChange={(value) => {
         setValue(value);
