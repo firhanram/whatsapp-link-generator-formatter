@@ -9,7 +9,7 @@ import {
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { useState } from "react";
-import { WHATSAPP_LINK } from "@/constants/ccmmon";
+import { MARKS, WHATSAPP_LINK } from "@/constants/common";
 import { type Editor, type JSONContent } from "@tiptap/react";
 
 const FooterPanel = ({ editor }: { editor: Editor }) => {
@@ -21,21 +21,17 @@ const FooterPanel = ({ editor }: { editor: Editor }) => {
     content?.forEach((node) => {
       if (node.type === "text") {
         if (node.marks) {
-          node.marks.forEach((mark) => {
-            if (mark.type === "bold") {
-              text += `*${node.text}*`;
-            } else if (mark.type === "italic") {
-              text += `_${node.text}_`;
-            } else if (mark.type === "strike") {
-              text += `~${node.text}~`;
-            } else if (mark.type === "monospace") {
-              text += "`" + node.text + "`";
-            } else if (mark.type === "code") {
-              text += "```" + node.text + "```";
-            } else {
-              text += node.text;
-            }
-          });
+          /**
+           * If there are multiple marks, we need to reduce them to a single string
+           * ex: `*~_text_*~`
+           */
+          const reducedText = node.marks.reduce((acc, mark) => {
+            const markType = mark.type as keyof typeof MARKS;
+
+            return MARKS[markType].replace("{text}", acc);
+          }, node.text ?? "");
+
+          text += reducedText;
         } else {
           text += node.text;
         }
