@@ -37,7 +37,6 @@ const EditorSection = () => {
         showOnlyCurrent: true,
       }),
     ],
-    immediatelyRender: false,
   });
 
   return (

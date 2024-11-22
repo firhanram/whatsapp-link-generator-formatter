@@ -47,7 +47,7 @@ const TOOLBAR_ITEMS = (editor: Editor) => [
   },
   {
     name: "Inline Code",
-    value: "inlineCode",
+    value: "code",
     icon: <CodeIcon />,
     toggle: () => editor.chain().focus().toggleCode().run(),
   },
