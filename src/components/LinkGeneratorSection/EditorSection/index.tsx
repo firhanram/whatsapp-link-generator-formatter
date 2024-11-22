@@ -39,13 +39,15 @@ const EditorSection = () => {
     ],
   });
 
+  console.log(editor?.getJSON());
+
   return (
     <WALayout>
       {editor && (
         <>
           <HeaderPanel />
           <ChatPanel editor={editor} />
-          <FooterPanel />
+          <FooterPanel editor={editor} />
         </>
       )}
     </WALayout>

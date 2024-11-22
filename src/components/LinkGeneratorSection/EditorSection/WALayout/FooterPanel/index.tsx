@@ -10,9 +10,53 @@ import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { useState } from "react";
 import { WHATSAPP_LINK } from "@/constants/ccmmon";
+import { type Editor, type JSONContent } from "@tiptap/react";
 
-const FooterPanel = () => {
+const FooterPanel = ({ editor }: { editor: Editor }) => {
   const [phoneNumber, setPhoneNumber] = useState("");
+
+  const toWhatsappText = ({ content }: JSONContent) => {
+    let text = "";
+
+    content?.forEach((node) => {
+      if (node.type === "text") {
+        if (node.marks) {
+          node.marks.forEach((mark) => {
+            if (mark.type === "bold") {
+              text += `*${node.text}*`;
+            } else if (mark.type === "italic") {
+              text += `_${node.text}_`;
+            } else if (mark.type === "strike") {
+              text += `~${node.text}~`;
+            } else if (mark.type === "monospace") {
+              text += "`" + node.text + "`";
+            } else if (mark.type === "code") {
+              text += "```" + node.text + "```";
+            } else {
+              text += node.text;
+            }
+          });
+        } else {
+          text += node.text;
+        }
+      } else if (node.type === "paragraph") {
+        text += toWhatsappText(node) + "\n";
+      } else if (node.type === "orderedList") {
+        const start = node.attrs?.start ?? 0;
+        node.content?.forEach((listItem, index) => {
+          text += `${index + start}. ${toWhatsappText(listItem)}`;
+        });
+      } else if (node.type === "bulletList") {
+        node.content?.forEach((listItem) => {
+          text += `- ${toWhatsappText(listItem)}`;
+        });
+      } else if (node.type === "blockquote") {
+        text += `> ${toWhatsappText(node)}`;
+      }
+    });
+
+    return text;
+  };
 
   return (
     <footer className="order-3 px-4 h-[64px] py-[9px] bg-[#f0f2f5] relative z-30 flex justify-between gap-4">
@@ -35,7 +79,13 @@ const FooterPanel = () => {
                 const formData = new FormData(e.target as HTMLFormElement);
                 const phoneNumber = formData.get("phoneNumber") as string;
 
-                console.log(`${WHATSAPP_LINK}${phoneNumber}`);
+                const encodedText = encodeURIComponent(
+                  toWhatsappText(editor.getJSON())
+                );
+
+                console.log(
+                  `${WHATSAPP_LINK}${phoneNumber}?text=${encodedText}`
+                );
               }}
             >
               <div className="space-y-1">
