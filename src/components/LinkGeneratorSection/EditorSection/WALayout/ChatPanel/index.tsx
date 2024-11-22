@@ -12,7 +12,7 @@ const ChatPanel = ({ editor }: { editor: Editor }) => {
           <TimeBadge />
 
           <div className="flex justify-center">
-            <FloatingToolbar />
+            <FloatingToolbar editor={editor} />
           </div>
 
           <BubleChatEditor editor={editor} />

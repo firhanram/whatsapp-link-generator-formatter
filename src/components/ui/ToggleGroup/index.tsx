@@ -73,19 +73,21 @@ const ToggleGroupItemTooltip = React.forwardRef<
     <TooltipProvider delayDuration={200} skipDelayDuration={150}>
       <Tooltip>
         <TooltipTrigger asChild>
-          <ToggleGroupPrimitive.Item
-            ref={ref}
-            className={cn(
-              toggleVariants({
-                variant: context.variant || variant,
-                size: context.size || size,
-              }),
-              className
-            )}
-            {...props}
-          >
-            {children}
-          </ToggleGroupPrimitive.Item>
+          <div>
+            <ToggleGroupPrimitive.Item
+              ref={ref}
+              className={cn(
+                toggleVariants({
+                  variant: context.variant || variant,
+                  size: context.size || size,
+                }),
+                className
+              )}
+              {...props}
+            >
+              {children}
+            </ToggleGroupPrimitive.Item>
+          </div>
         </TooltipTrigger>
         <TooltipContent>{tooltipContent}</TooltipContent>
       </Tooltip>

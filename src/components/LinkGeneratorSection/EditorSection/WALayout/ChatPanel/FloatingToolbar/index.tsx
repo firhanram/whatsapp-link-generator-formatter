@@ -12,6 +12,7 @@ import {
   ToggleGroup,
   ToggleGroupItemTooltip,
 } from "@/components/ui/ToggleGroup";
+import { type Editor } from "@tiptap/react";
 
 const TOOLBAR_ITEMS = [
   {
@@ -36,7 +37,7 @@ const TOOLBAR_ITEMS = [
   },
   {
     name: "Quote",
-    value: "quote",
+    value: "blockquote",
     icon: <TextQuoteIcon />,
   },
   {
@@ -56,11 +57,12 @@ const TOOLBAR_ITEMS = [
   },
 ];
 
-function FloatingToolbar() {
+function FloatingToolbar({ editor }: { editor: Editor }) {
   return (
     <ToggleGroup
       type="single"
       className="mb-10 bg-white rounded-md inline-flex"
+      value={TOOLBAR_ITEMS.find((item) => editor.isActive(item.value))?.value}
     >
       {TOOLBAR_ITEMS.map((item) => {
         return (
