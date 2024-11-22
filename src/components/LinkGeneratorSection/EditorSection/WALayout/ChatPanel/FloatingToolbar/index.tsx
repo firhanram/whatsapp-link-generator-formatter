@@ -68,24 +68,26 @@ const TOOLBAR_ITEMS = (editor: Editor) => [
 function FloatingToolbar({ editor }: { editor: Editor }) {
   const items = TOOLBAR_ITEMS(editor);
 
+  const selectedValue = items
+    .filter((item) => editor.isActive(item.value))
+    .map((item) => item.value);
+
   return (
     <ToggleGroup
-      type="single"
+      type="multiple"
       className="mb-10 bg-white rounded-md inline-flex"
-      value={items.find((item) => editor.isActive(item.value))?.value ?? ""}
+      value={selectedValue}
       onValueChange={(value) => {
-        const isActive = items.some((item) => item.value === value);
+        const isActive = items.some((item) => value.includes(item.value));
 
         if (value && isActive) {
-          items.find((item) => item.value === value)?.toggle();
-        }
-
-        if (!value) {
           for (const item of items) {
-            if (editor.isActive(item.value)) {
-              console.log(item.value);
+            if (value.includes(item.value)) {
               item.toggle();
-              break;
+            } else {
+              if (editor.isActive(item.value)) {
+                item.toggle();
+              }
             }
           }
         }
