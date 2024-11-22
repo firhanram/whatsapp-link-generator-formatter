@@ -13,6 +13,7 @@ import {
   ToggleGroupItemTooltip,
 } from "@/components/ui/ToggleGroup";
 import { type Editor } from "@tiptap/react";
+import { useState } from "react";
 
 const TOOLBAR_ITEMS = (editor: Editor) => [
   {
@@ -66,10 +67,13 @@ const TOOLBAR_ITEMS = (editor: Editor) => [
 ];
 
 function FloatingToolbar({ editor }: { editor: Editor }) {
+  const [value, setValue] = useState<string[]>([]);
   const items = TOOLBAR_ITEMS(editor);
 
   const selectedValue = items
-    .filter((item) => editor.isActive(item.value))
+    .filter((item) =>
+      value.some((v) => v === item.value && editor.isActive(item.value))
+    )
     .map((item) => item.value);
 
   return (
@@ -78,6 +82,7 @@ function FloatingToolbar({ editor }: { editor: Editor }) {
       className="mb-10 bg-white rounded-md inline-flex"
       value={selectedValue}
       onValueChange={(value) => {
+        setValue(value);
         const isActive = items.some((item) => value.includes(item.value));
 
         if (value && isActive) {
