@@ -21,7 +21,7 @@ const GeneratedLinkDialog = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={() => toggle()}>
-      <DialogContent className="overflow-hidden rounded max-w-[calc(100%-16px)]">
+      <DialogContent className="overflow-hidden rounded max-w-[calc(100%-16px)]md:max-w-lg">
         <DialogHeader>
           <DialogTitle>Generated WhatsApp Link</DialogTitle>
           <DialogDescription>
@@ -31,13 +31,15 @@ const GeneratedLinkDialog = () => {
         </DialogHeader>
 
         <button
-          className="p-2 gap-10 border items-center border-border bg-secondary rounded inline-flex overflow-hidden"
+          className="p-2 gap-10 border items-center border-border bg-secondary rounded inline-flex justify-between overflow-hidden"
           onClick={() => handleCopy()}
         >
           <div className="line-clamp-1 text-left text-sm text-muted-foreground">
             {formattedMessage}
           </div>
-          <ClipboardIcon className="text-primary shrink-0" size={14} />
+          <div className="p-1 bg-primary rounded-sm">
+            <ClipboardIcon className="text-secondary shrink-0" size={14} />
+          </div>
         </button>
       </DialogContent>
     </Dialog>

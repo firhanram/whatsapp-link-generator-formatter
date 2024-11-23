@@ -61,9 +61,9 @@ const FooterPanel = ({ editor }: { editor: Editor }) => {
           const formData = new FormData(e.target as HTMLFormElement);
           const phoneNumber = formData.get("phoneNumber") as string;
 
-          const encodedText = encodeURIComponent("Salam Kenal👋🏻");
-
-          console.log(toWhatsappText(editor.getJSON()));
+          const encodedText = encodeURIComponent(
+            toWhatsappText(editor.getJSON())
+          );
 
           setFormattedMessage(
             `${WHATSAPP_LINK}?phone=${phoneNumber}&text=${encodedText}`
