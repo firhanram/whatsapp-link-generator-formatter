@@ -14,13 +14,33 @@
 
       ol,
       ul {
-        margin-left: 20px;
         margin-top: 4px;
         margin-bottom: 4px;
       }
 
+      ol {
+        margin-left: 20px;
+
+        li {
+          padding-left: 2px;
+        }
+      }
+
       ul {
-        list-style: disc;
+        list-style: none;
+        margin-left: 8px;
+
+        li {
+          display: flex;
+          &::before {
+            content: "\2022";
+            font-size: 11px;
+            color: rgb(17, 27, 33);
+            margin-left: 3px;
+            margin-right: 5px;
+            vertical-align: text-bottom;
+          }
+        }
       }
 
       ol {
