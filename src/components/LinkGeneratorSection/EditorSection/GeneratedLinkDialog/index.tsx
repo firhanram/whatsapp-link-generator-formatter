@@ -3,11 +3,12 @@ import {
   Dialog,
   DialogContent,
   DialogDescription,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/Dialog";
 import { useGeneratedLinkDialogStore, useWhatsAppPayloadStore } from "@/store";
-import { ClipboardIcon } from "lucide-react";
+import { CopyIcon } from "lucide-react";
 
 const GeneratedLinkDialog = () => {
   const { isOpen, toggle } = useGeneratedLinkDialogStore();
@@ -21,26 +22,32 @@ const GeneratedLinkDialog = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={() => toggle()}>
-      <DialogContent className="overflow-hidden rounded max-w-[calc(100%-16px)]md:max-w-lg">
+      <DialogContent className="overflow-hidden rounded max-w-[calc(100vw-16px)] md:max-w-lg">
         <DialogHeader>
-          <DialogTitle>Generated WhatsApp Link</DialogTitle>
-          <DialogDescription>
+          <DialogTitle className="text-left">
+            Success! Your WhatsApp link has been generated
+          </DialogTitle>
+          <DialogDescription className="text-left">
             Here is your generated WhatsApp link. Click the button below to copy
             it to your clipboard.
           </DialogDescription>
         </DialogHeader>
 
-        <button
-          className="p-2 gap-10 border items-center border-border bg-secondary rounded inline-flex justify-between overflow-hidden"
-          onClick={() => handleCopy()}
-        >
-          <div className="line-clamp-1 text-left text-sm text-muted-foreground">
+        <div className="p-2 border border-border bg-secondary rounded overflow-hidden">
+          <div className="line-clamp-1 break-all text-sm text-muted-foreground">
             {formattedMessage}
           </div>
-          <div className="p-1 bg-primary rounded-sm">
-            <ClipboardIcon className="text-secondary shrink-0" size={14} />
-          </div>
-        </button>
+        </div>
+        <DialogFooter>
+          <Button
+            onClick={() => {
+              handleCopy();
+            }}
+          >
+            <CopyIcon />
+            Copy Link
+          </Button>
+        </DialogFooter>
       </DialogContent>
     </Dialog>
   );
