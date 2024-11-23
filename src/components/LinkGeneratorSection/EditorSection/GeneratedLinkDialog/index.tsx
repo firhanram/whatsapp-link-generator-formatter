@@ -7,17 +7,27 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/Dialog";
+import { toast } from "@/hooks/useToast";
 import { useGeneratedLinkDialogStore, useWhatsAppPayloadStore } from "@/store";
-import { CopyIcon } from "lucide-react";
+import { CircleCheckIcon, CopyIcon } from "lucide-react";
 
 const GeneratedLinkDialog = () => {
   const { isOpen, toggle } = useGeneratedLinkDialogStore();
   const { formattedMessage } = useWhatsAppPayloadStore();
 
   const handleCopy = () => {
-    navigator.clipboard
-      .writeText(formattedMessage)
-      .then(() => alert("Copied to clipboard"));
+    navigator.clipboard.writeText(formattedMessage).then(() => {
+      toggle();
+
+      toast({
+        description: (
+          <div className="flex gap-2">
+            <CircleCheckIcon size={20} className="shrink-0" />
+            Copied to clipboard!
+          </div>
+        ),
+      });
+    });
   };
 
   return (

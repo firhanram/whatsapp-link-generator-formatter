@@ -18,6 +18,7 @@ import Code from "@tiptap/extension-code";
 import { Monospace } from "@/plugins/tiptap/monospace";
 import GeneratedLinkDialog from "./GeneratedLinkDialog";
 import { CustomCode } from "@/plugins/tiptap/code";
+import { Toaster } from "@/components/ui/Toaster";
 
 const EditorSection = () => {
   const editor = useEditor({
@@ -51,6 +52,7 @@ const EditorSection = () => {
         </>
       )}
       <GeneratedLinkDialog />
+      <Toaster />
     </WALayout>
   );
 };

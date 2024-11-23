@@ -1,10 +1,11 @@
-import { ArrowDownToLineIcon } from "lucide-react";
+import { ArrowDownToLineIcon, CircleXIcon } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { useState } from "react";
 import { MARKS, WHATSAPP_LINK } from "@/constants/common";
 import { type Editor, type JSONContent } from "@tiptap/react";
 import { useGeneratedLinkDialogStore, useWhatsAppPayloadStore } from "@/store";
+import { toast } from "@/hooks/useToast";
 
 const FooterPanel = ({ editor }: { editor: Editor }) => {
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -60,6 +61,19 @@ const FooterPanel = ({ editor }: { editor: Editor }) => {
           e.preventDefault();
           const formData = new FormData(e.target as HTMLFormElement);
           const phoneNumber = formData.get("phoneNumber") as string;
+
+          if (editor.isEmpty) {
+            editor.chain().focus().run();
+
+            return toast({
+              description: (
+                <div className="flex gap-2">
+                  <CircleXIcon size={20} className="shrink-0" />
+                  Cannot generate link from empty message
+                </div>
+              ),
+            });
+          }
 
           const encodedText = encodeURIComponent(
             toWhatsappText(editor.getJSON())
