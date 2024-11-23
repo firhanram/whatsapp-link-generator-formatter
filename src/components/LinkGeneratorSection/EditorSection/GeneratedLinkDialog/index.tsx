@@ -31,13 +31,13 @@ const GeneratedLinkDialog = () => {
         </DialogHeader>
 
         <button
-          className="p-2 gap-1 border items-center border-border bg-secondary rounded inline-flex overflow-hidden"
+          className="p-2 gap-10 border items-center border-border bg-secondary rounded inline-flex overflow-hidden"
           onClick={() => handleCopy()}
         >
           <div className="line-clamp-1 text-left text-sm text-muted-foreground">
             {formattedMessage}
           </div>
-          <ClipboardIcon className="text-muted-foreground shrink-0" size={14} />
+          <ClipboardIcon className="text-primary shrink-0" size={14} />
         </button>
       </DialogContent>
     </Dialog>
