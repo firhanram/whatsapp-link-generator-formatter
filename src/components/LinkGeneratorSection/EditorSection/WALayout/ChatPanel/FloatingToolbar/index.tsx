@@ -30,7 +30,7 @@ const TOOLBAR_ITEMS = (editor: Editor) => [
   },
   {
     name: "Strikethrough",
-    value: "strikethrough",
+    value: "strike",
     icon: <StrikethroughIcon />,
     toggle: () => {
       editor.chain().focus().toggleStrike().run();
