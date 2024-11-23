@@ -21,7 +21,7 @@ const GeneratedLinkDialog = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={() => toggle()}>
-      <DialogContent className="overflow-hidden">
+      <DialogContent className="overflow-hidden rounded max-w-[calc(100%-16px)]">
         <DialogHeader>
           <DialogTitle>Generated WhatsApp Link</DialogTitle>
           <DialogDescription>

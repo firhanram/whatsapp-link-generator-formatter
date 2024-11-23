@@ -69,7 +69,7 @@ const FooterPanel = ({ editor }: { editor: Editor }) => {
 
           toggle();
         }}
-        className="flex justify-between gap-4"
+        className="flex justify-between flex-col md:flex-row gap-4"
       >
         <div className="flex-1 space-y-1">
           <Input
@@ -88,6 +88,7 @@ const FooterPanel = ({ editor }: { editor: Editor }) => {
                 target.value = value.slice(0, value.length - 1);
               }
             }}
+            className="text-sm lg:text-base"
           />
           <p className="text-muted-foreground text-xs">
             Enter your phone number to generate a WhatsApp link. Example:
