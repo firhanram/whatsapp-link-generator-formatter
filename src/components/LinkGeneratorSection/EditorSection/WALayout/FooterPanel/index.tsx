@@ -16,8 +16,6 @@ const FooterPanel = ({ editor }: { editor: Editor }) => {
   const toWhatsappText = ({ content }: JSONContent) => {
     let text = "";
 
-    console.log(content);
-
     content?.forEach((node) => {
       if (node.type === "text") {
         if (node.marks) {
