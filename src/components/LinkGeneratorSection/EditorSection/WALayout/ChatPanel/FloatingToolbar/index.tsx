@@ -82,7 +82,7 @@ function FloatingToolbar({ editor }: { editor: Editor }) {
   const items = TOOLBAR_ITEMS(editor);
 
   return (
-    <div className="flex rounded-md gap-3 bg-white shadow p-1 mb-10">
+    <div className="flex rounded-md gap-3 bg-white shadow p-1 mb-4">
       {items.map((item) => {
         return (
           <ToolbarButton
