@@ -1,4 +1,4 @@
-export const WHATSAPP_LINK = "https://wa.me/";
+export const WHATSAPP_LINK = "https://api.whatsapp.com/send/";
 
 export const MARKS = {
   bold: "*{text}*",
