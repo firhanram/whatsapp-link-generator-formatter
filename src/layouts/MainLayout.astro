@@ -1,6 +1,7 @@
 ---
 import { SEO_TITLE, SEO_DESC } from "@/constants/seo";
 import "@/styles/globals.css";
+import Analytics from "@vercel/analytics/astro";
 ---
 
 <html lang="en">
@@ -36,5 +37,6 @@ import "@/styles/globals.css";
   </head>
   <body class="min-h-screen w-screen relative">
     <slot />
+    <Analytics />
   </body>
 </html>
