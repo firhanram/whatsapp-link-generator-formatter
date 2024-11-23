@@ -28,6 +28,8 @@ export const Monospace = Mark.create({
     };
   },
 
+  excludes: "_",
+
   parseHTML() {
     return [
       {
