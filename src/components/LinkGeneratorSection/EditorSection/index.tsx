@@ -17,6 +17,7 @@ import BulletList from "@tiptap/extension-bullet-list";
 import Code from "@tiptap/extension-code";
 import { Monospace } from "@/plugins/tiptap/monospace";
 import GeneratedLinkDialog from "./GeneratedLinkDialog";
+import { CustomCode } from "@/plugins/tiptap/code";
 
 const EditorSection = () => {
   const editor = useEditor({
@@ -24,7 +25,7 @@ const EditorSection = () => {
       Document,
       Paragraph,
       Text,
-      Code,
+      CustomCode,
       CustomBold,
       CustomStrike,
       CustomItalic,
