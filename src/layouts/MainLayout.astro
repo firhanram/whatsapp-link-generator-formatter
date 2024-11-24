@@ -27,10 +27,7 @@ import Analytics from "@vercel/analytics/astro";
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={SEO_TITLE} />
     <meta name="twitter:description" content={SEO_DESC} />
-    <meta
-      name="twitter:image"
-      content="https://res.cloudinary.com/dff6c4tee/image/upload/v1732415127/easywalink/twitter-image-card.png"
-    />
+    <meta name="twitter:image" content={`${Astro.url}/og-image.png`} />
     <meta name="twitter:site" content="@Ramadhan_firhan" />
 
     <link rel="canonical" href={Astro.url} />
