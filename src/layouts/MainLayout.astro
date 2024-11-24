@@ -8,11 +8,10 @@ import Analytics from "@vercel/analytics/astro";
   <head>
     <meta charset="utf-8" />
 
-    <link rel="shortcut icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" sizes="32x32" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="sitemap" href="/sitemap-index.xml" />
 
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={SEO_DESC} />
 
@@ -25,16 +24,18 @@ import Analytics from "@vercel/analytics/astro";
     <meta property="og:site_name" content="Easywalink" />
     <meta property="og:type" content="website" />
 
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content={SEO_TITLE} />
-    <meta property="twitter:description" content={SEO_DESC} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={SEO_TITLE} />
+    <meta name="twitter:description" content={SEO_DESC} />
     <meta
-      property="twitter:image"
+      name="twitter:image"
       content="https://res.cloudinary.com/dff6c4tee/image/upload/v1732415127/easywalink/twitter-image-card.png"
     />
-    <meta property="twitter:site" content="@Ramadhan_firhan" />
+    <meta name="twitter:site" content="@Ramadhan_firhan" />
 
     <link rel="canonical" href={Astro.url} />
+
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <title>{SEO_TITLE}</title>
   </head>
