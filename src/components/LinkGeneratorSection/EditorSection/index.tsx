@@ -41,6 +41,7 @@ const EditorSection = () => {
       }),
       Link
     ],
+    immediatelyRender: false,
   });
 
   return (
