@@ -5,7 +5,7 @@
       position: relative;
 
       & > p.is-editor-empty:first-child::before {
-        color: theme("colors.muted.foreground");
+        color: var(--color-muted-foreground);
         content: attr(data-placeholder);
         pointer-events: none;
         position: absolute;
