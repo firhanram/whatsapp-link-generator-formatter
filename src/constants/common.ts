@@ -6,4 +6,5 @@ export const MARKS = {
   strike: "~{text}~",
   code: "`{text}`",
   monospace: "```{text}```",
+  link: "{text}"
 };

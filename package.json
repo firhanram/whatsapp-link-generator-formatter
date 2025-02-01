@@ -25,6 +25,7 @@
     "@tiptap/extension-code": "^2.10.0",
     "@tiptap/extension-document": "^2.10.0",
     "@tiptap/extension-italic": "^2.10.0",
+    "@tiptap/extension-link": "^2.11.5",
     "@tiptap/extension-list-item": "^2.10.0",
     "@tiptap/extension-ordered-list": "^2.10.0",
     "@tiptap/extension-paragraph": "^2.10.0",
@@ -48,5 +49,6 @@
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.6.3",
     "zustand": "^5.0.1"
-  }
+  },
+  "packageManager": "pnpm@9.15.0"
 }
